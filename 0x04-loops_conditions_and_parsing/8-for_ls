@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script removes 2 first charachters
+for i in *; do
+  echo "$i" | cut -d '-' -f 2
+done

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # The following scipt writes "Best school" x10
 i=0
-while (($i=<10));do
+while (( "$i" =< 10 ));do
 	echo "Best school"
-	if (($i=9));then
+	if (( "$i" = 9 ));then
 		echo "Hi"
 	fi
 	i=$((i+1))
