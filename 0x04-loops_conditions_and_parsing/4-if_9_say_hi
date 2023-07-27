@@ -2,9 +2,9 @@
 # The following scipt writes "Best school" x10
 i=0
 while (($i=<10));do
-	echo "Best school"
-	if (($i=9));then
-		echo "Hi"
-	fi
-	i=$((i+1))
-	done
+  echo "Best school"
+  if (($i=9));then
+    echo "Hi"
+    fi
+i=$((i+1))
+done
