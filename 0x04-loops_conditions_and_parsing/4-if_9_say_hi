@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # The following scipt writes "Best school" x10
 i=0
+<<<<<<< HEAD
 while (( "$i" =< 10 ));do
 	echo "Best school"
 	if (( "$i" = 9 ));then
@@ -8,3 +9,12 @@ while (( "$i" =< 10 ));do
 	fi
 	i=$((i+1))
 	done
+=======
+while (( $i<10 ));do
+  echo "Best school"
+  if (( $i=9 ));then
+    echo "Hi"
+    fi
+i=$((i+1))
+done
+>>>>>>> 6116fa807c46ae1bba5becc64ee6301d0fba3c5f
