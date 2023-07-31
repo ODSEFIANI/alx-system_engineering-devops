@@ -13,20 +13,27 @@
 # Starts manage_my_process
 # Creates a file containing its PID in /var/run/my_process.pid
 # Displays manage_my_process restarted
-# Displays Usage: manage_my_process {start|stop|restart} if any other argument or no argument is passed
+# Displays Usage: manage_my_process {start|stop|restart}
 
-terminator() {
-  rm /var/run/myscript.pid
-  exit
-}
-
-echo "$$" > /var/run/myscript.pid
-
-while true
-do
-  echo "To infinity and beyond"
-  sleep 2
-  trap 'echo "Y U no love me?!"' SIGINT
-  trap 'echo "I hate the kill command" && terminator' SIGTERM
-  trap 'terminator' SIGQUITgit 
-done
+if [ "${1}" == "start" ]
+then
+    ./manage_my_process &
+    touch /var/run/my_process.pid
+    echo "$!" > /var/run/my_process.pid
+    echo "manage_my_process started"
+elif [ "${1}" == "stop" ]
+then
+    echo "manage_my_process stopped"
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+elif [ "${1}" == "restart" ]
+then
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+    ./manage_my_process &
+    touch /var/run/my_process.pid
+    echo "$!" > /var/run/my_process.pid
+    echo "manage_my_process restarted"
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi
