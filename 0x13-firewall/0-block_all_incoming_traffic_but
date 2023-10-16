@@ -1,6 +1,9 @@
 #!usr/bin/env bash
 # This sript deny incoming traffic except ssh,hhtp,https
 
+sudo apt update
+sudo apt install -y ufw
+sudeo ufw enable
 sudo ufw default deny incoming
 sudo ifw allow 22
 sudo ifw allow 443
