@@ -1,0 +1,7 @@
+#!usr/bin/env bash
+# This sript deny incoming traffic except ssh,hhtp,https
+
+sudo ufw deny incoming
+sudo ifw allow 22
+sudo ifw allow 443
+sudo ifw allow 80
