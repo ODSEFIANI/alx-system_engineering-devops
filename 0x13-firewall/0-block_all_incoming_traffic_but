@@ -5,6 +5,6 @@ sudo apt update
 sudo apt install -y ufw
 sudeo ufw enable
 sudo ufw default deny incoming
-sudo ifw allow 22
-sudo ifw allow 443
-sudo ifw allow 80
+sudo ufw allow 22
+sudo ufw allow 443
+sudo ufw allow 80
